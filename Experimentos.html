@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Experimentos</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- css: -->
+    <link rel="stylesheet" type="text/css" href="css/experimentos.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- script: -->
+    <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
+    <script src="js/experimentos.js" charset="utf-8"></script>
+
+</head>
+<body>
+
+        <div class = "jumbotron" style = "margin-bottom:0px">
+                <h2><span style = "color:#373C42;">Smart</span><span style = "color:rgba(0, 128, 0, 0.678);">Subway</span></h2>
+                <p style = "color:#373C42;"><strong>Experimentos - Eficiência Energética</strong></p>
+            </div>
+            <!-- navbar -->
+            <nav class="navbar navbar-expand-sm navbar-dark bg-dark ">
+    <!-- 
+                <span class ="navar-brand">
+                    Testing...
+                </span> -->
+    
+                    <!-- <a class="navbar-brand" href="#"><img id="logo" src="img/logo.png"></a>       -->
+                    <!-- <a class="navbar-brand" href="#"><div style = "color:white; padding-top: 10px;"><strong style = "font-size:23px;">GeneticBee</strong><sup> Experimentos</sup></div></a>       -->
+                    <a href = "index.html" class="navbar-brand navbar-text mx-auto" ><div style = "color:white; font-size:20px;"><strong>SS</strong></div></a>      
+    
+            </nav>
+
+
+
+
+    <div class = "container">
+        <div class = "row">
+            <div class = "col-md-12">
+                <h6 style = "margin-top:25px; margin-bottom:25px;">Experimento1: </h6>
+            </div>
+        </div>
+    </div>
+
+    <div class="chart-wrapper" id="chart-line1"></div>
+
+    <script type="text/javascript">
+    
+        d3.csv('data/exp1.csv').then(function(data) {
+        
+        data.forEach(function (d) {
+            d.Entrada = +d.Entrada;
+            d.AG = +d.AG;
+            d.Captura = + d.Captura;
+        });
+    
+
+        var chart = makeLineChart(data, 'Captura', {
+        
+            'Sensores': {column: 'Entrada'}, 
+            'AG': {column: 'AG'}
+        }, {xAxis: 'Capturas', yAxis: 'Gerações'});
+        chart.bind("#chart-line1");
+        chart.render();
+
+    });
+    </script>
+
+
+    <div class = "container">
+        <div class = "row">
+            <div class = "col-md-12">
+                <h6 style = "margin-top:25px; margin-bottom:25px;">Experimento2: </h6>
+            </div>
+        </div>
+    </div>
+
+    <div class="chart-wrapper" id="chart-line2"></div>
+
+    <script type="text/javascript">
+
+        d3.csv('data/exp2.csv').then(function(data) {
+        
+        data.forEach(function (d) {
+            d.Entrada = +d.Entrada;
+            d.AG = +d.AG;
+            d.Captura = + d.Captura;
+        });
+
+        var chart = makeLineChart(data, 'Captura', {
+        
+            'Sensores': {column: 'Entrada'}, 
+            'AG': {column: 'AG'}
+        }, {xAxis: 'Capturas', yAxis: 'Gerações'});
+        chart.bind("#chart-line2");
+        chart.render();
+
+    });
+    </script>
+
+
+    <div class = "container">
+        <div class = "row">
+            <div class = "col-md-12">
+                <h6 style = "margin-top:25px; margin-bottom:25px;">Experimento3: </h6>
+            </div>
+        </div>
+    </div>
+
+    <div class="chart-wrapper" id="chart-line3"></div>
+
+    <script type="text/javascript">
+        d3.csv('data/exp3.csv').then(function(data) {
+        
+
+        data.forEach(function (d) {
+            d.Entrada = +d.Entrada;
+            d.AG = +d.AG;
+            d.Captura = + d.Captura;
+        });
+
+        var chart = makeLineChart(data, 'Captura', {
+        
+            'Sensores': {column: 'Entrada'}, 
+            'AG': {column: 'AG'}
+        }, {xAxis: 'Capturas', yAxis: 'Gerações'});
+        chart.bind("#chart-line3");
+        chart.render();
+
+    });
+    </script>
+
+
+
+    <div class = "container">
+        <div class = "row">
+            <div class = "col-md-12">
+                <h6 style = "margin-top:25px; margin-bottom:25px;">Experimento4: </h6>
+            </div>
+        </div>
+    </div>
+
+    <div class="chart-wrapper" id="chart-line4"></div>
+
+
+    <script type="text/javascript">
+        d3.csv('data/exp4.csv').then(function(data) {
+        
+
+        data.forEach(function (d) {
+            d.Entrada = +d.Entrada;
+            d.AG = +d.AG;
+            d.Captura = + d.Captura;
+        });
+    
+        var chart = makeLineChart(data, 'Captura', {
+        
+            'Sensores': {column: 'Entrada'}, 
+            'AG': {column: 'AG'}
+        }, {xAxis: 'Capturas', yAxis: 'Gerações'});
+        chart.bind("#chart-line4");
+        chart.render();
+
+    });
+    </script>
+
+
+
+    <div class = "container">
+        <div class = "row">
+            <div class = "col-md-12">
+                <h6 style = "margin-top:25px; margin-bottom:25px;">Experimento5: </h6>
+            </div>
+        </div>
+    </div>
+
+    <div class="chart-wrapper" id="chart-line5"></div>
+
+
+    <script type="text/javascript">
+        d3.csv('data/exp5.csv').then(function(data) {
+        
+
+        data.forEach(function (d) {
+            d.Entrada = +d.Entrada;
+            d.AG = +d.AG;
+            d.Captura = + d.Captura;
+        });
+    
+
+        var chart = makeLineChart(data, 'Captura', {
+        
+            'Sensores': {column: 'Entrada'}, 
+            'AG': {column: 'AG'}
+        }, {xAxis: 'Capturas', yAxis: 'Gerações'});
+        chart.bind("#chart-line5");
+        chart.render();
+
+    });
+    </script>
+
+
+    <div class = "container">
+        <div class = "row">
+            <div class = "col-md-12">
+                <h6 style = "margin-top:25px; margin-bottom:25px;">Experimento6: </h6>
+            </div>
+        </div>
+    </div>
+
+    <div class="chart-wrapper" id="chart-line6"></div>
+
+    <script type="text/javascript">
+        d3.csv('data/exp6.csv').then(function(data) {
+        
+
+        data.forEach(function (d) {
+            d.Entrada = +d.Entrada;
+            d.AG = +d.AG;
+            d.Captura = + d.Captura;
+        });
+
+        var chart = makeLineChart(data, 'Captura', {
+        
+            'Sensores': {column: 'Entrada'}, 
+            'AG': {column: 'AG'}
+        }, {xAxis: 'Capturas', yAxis: 'Gerações'});
+        chart.bind("#chart-line6");
+        chart.render();
+
+    });
+    </script>
+
+
+
+
+    <div class = "container">
+        <div class = "row">
+            <div class = "col-md-12">
+                <h6 style = "margin-top:25px; margin-bottom:25px;">Experimento7: </h6>
+            </div>
+        </div>
+    </div>
+
+    <div class="chart-wrapper" id="chart-line7"></div>
+
+
+    <script type="text/javascript">
+        d3.csv('data/exp7.csv').then(function(data) {
+        
+
+        data.forEach(function (d) {
+            d.Entrada = +d.Entrada;
+            d.AG = +d.AG;
+            d.Captura = + d.Captura;
+        });
+
+
+        var chart = makeLineChart(data, 'Captura', {
+        
+            'Sensores': {column: 'Entrada'}, 
+            'AG': {column: 'AG'}
+        }, {xAxis: 'Capturas', yAxis: 'Gerações'});
+        chart.bind("#chart-line7");
+        chart.render();
+
+    });
+    </script>
+
+
+    <div class = "container">
+        <div class = "row">
+            <div class = "col-md-12">
+                <h6 style = "margin-top:25px; margin-bottom:25px;">Experimento8: </h6>
+            </div>
+        </div>
+    </div>
+
+    <div class="chart-wrapper" id="chart-line8"></div>
+
+    <script type="text/javascript">
+        d3.csv('data/exp8.csv').then(function(data) {
+        
+
+        data.forEach(function (d) {
+            d.Entrada = +d.Entrada;
+            d.AG = +d.AG;
+            d.Captura = + d.Captura;
+        });
+
+        var chart = makeLineChart(data, 'Captura', {
+        
+            'Sensores': {column: 'Entrada'}, 
+            'AG': {column: 'AG'}
+        }, {xAxis: 'Capturas', yAxis: 'Gerações'});
+        chart.bind("#chart-line8");
+        chart.render();
+
+    });
+    </script>
+    
+</body>
+</html>

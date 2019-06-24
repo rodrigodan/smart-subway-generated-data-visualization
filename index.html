@@ -1,0 +1,312 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <title>Geração</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+        <!-- jQuery UI CSS -->
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+        
+        <link rel="stylesheet" href="css/jquery-ui.min.css">
+        <link rel="stylesheet" href="css/jquery-ui.structure.min.css">
+        <link rel="stylesheet" href="css/jquery-ui.theme.min.css">
+
+        <!-- Bootstrap Core CSS -->
+        <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/multiline.css">
+
+        <!-- styling css: -->
+
+        <style>
+
+            #chart-area{
+                margin-left:5%;
+               margin-top: 5%;
+                margin-bottom: 5%;
+            }   
+            
+           
+
+            
+    @media all and (max-width: 576px) {
+    nav, .jumbotron{
+        /* margin-right:-23px; */
+        margin-right:-6.2%;
+
+       
+
+    }
+
+    #chart-area{
+        margin-top: 10%;
+    }
+
+
+    }
+
+    
+                
+        </style>
+
+        <!-- External JS libraries -->
+        
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <!-- <script src="http://d3js.org/d3.v3.js" charset="utf-8"></script> -->
+        <!-- <script src="js/d3.min.js"></script> -->
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        
+        <!-- Custom JS -->
+        
+        <script src="js/multiline.js" charset="utf-8"></script>
+        <script src="js/main.js"></script>
+
+
+
+    </head>
+
+    
+
+    <body>
+
+        <div class = "jumbotron" style = "margin-bottom:0px">
+            <h2><span style = "color:#373C42;">Smart</span><span style = "color:rgba(0, 128, 0, 0.678);">Subway</span></h2>
+            <p style = "color:#373C42;"><strong>Experimentos - Eficiência Energética</strong></p>
+        </div>
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark ">
+<!-- 
+            <span class ="navar-brand">
+                Testing...
+            </span> -->
+
+                <!-- <a class="navbar-brand" href="#"><img id="logo" src="img/logo.png"></a>       -->
+                <!-- <a class="navbar-brand" href="#"><div style = "color:white; padding-top: 10px;"><strong style = "font-size:23px;">GeneticBee</strong><sup> Experimentos</sup></div></a>       -->
+                <a href = "index.html" class="navbar-brand navbar-text mx-auto" ><div style = "color:white; font-size:20px;"><strong>SS</strong></div></a>      
+
+        </nav>
+
+        <br>
+        <br>
+        <!-- Bootstrap grid setup -->
+        <div class="container">
+
+            <div id="selections" class="row">
+                <div class="col-md-12">
+                    <h5 style = "margin-top:15px; ">Geração:</h5>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div style = "border-bottom: 4px solid #373C42;">    
+                        <span style = "font-size:15px;"> Avaliação x Geração </span>
+                    </div>
+
+                    <br>                   
+                    <select style="height:30px; font-size:15px;" id="coin-select" class="form-control">
+                            
+                        <option value="Exp1">Experimento1</option>
+                        <option value="Exp2">Experimento2</option>
+                        <option value="Exp3">Experimento3</option>
+                        <option value="Exp4">Experimento4</option>
+                        <option value="Exp5">Experimento5</option>
+                        <option value="Exp6">Experimento6</option>
+                        <option value="Exp7">Experimento7</option>
+                        <option value="Exp8">Experimento8</option>
+
+                    </select>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- draw the first linechart -->
+
+        <div id="chart-area"></div>
+        <script>
+            init();        
+        </script>
+
+
+
+        <div class="container">
+            <div class = "row">
+            
+                <div class="col-md-12">
+        
+                    <div style = "border-bottom: 4px solid #373C42;">    
+            
+                        <span style = "font-size:15px;"> Comparação envolvendo todos os Experimentos: </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <!-- draw the multline chart: -->
+        <div class="chart-wrapper" id="chart-line1"></div>
+        <script type="text/javascript">
+
+            d3.csv('data/geracao.csv').then(function(data)  {
+                data.forEach(function (d) {
+                    d.Geracao = +d.Geracao;
+                    d.Exp1 = parseFloat(d.Exp1);
+                    d.Exp2 = parseFloat(d.Exp2);
+                    d.Exp3 = parseFloat(d.Exp3);
+                    d.Exp4 = parseFloat(d.Exp4);
+                    d.Exp5 = parseFloat(d.Exp5);
+                    d.Exp6 = parseFloat(d.Exp6);
+                    d.Exp7 = parseFloat(d.Exp7);
+                    d.Exp8 = parseFloat(d.Exp8);
+
+                });
+            
+            // console.log("here");        
+            // console.log(data["Exp1"]);
+
+            var chart = makeLineChart(data, 'Geracao', {
+                'Experimentos 1': {column: 'Exp1'},
+                'Experimentos 2': {column: 'Exp2'},
+                'Experimentos 3': {column: 'Exp3'},
+                'Experimentos 4': {column: 'Exp4'},
+                'Experimentos 5': {column: 'Exp5'},
+                'Experimentos 6': {column: 'Exp6'},
+                'Experimentos 7': {column: 'Exp7'},
+                'Experimentos 8': {column: 'Exp8'}
+            }, {xAxis: 'Gerações', yAxis: 'Avaliação'});
+            chart.bind("#chart-line1");
+            chart.render();
+            });
+
+        </script>
+
+
+        <div class = "container">
+
+            <br><br>
+            <div class="row">
+                <!-- table with the content -->
+                <table style = "font-size:12px;" class="table table-hover">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col">Experimentos</th>
+                        <th scope="col">Seleção</th>
+                        <th scope="col">Crossover</th>
+                        <th scope="col">Mutação</th>
+                        <th scope="col">Módulo</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Roleta</td>
+                        <td>Um Ponto</td>
+                        <td>Uniforme</td>
+                        <td>Melhor Pai</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Roleta</td>
+                        <td>Um Ponto</td>
+                        <td>Limite</td>
+                        <td>Melhor Pai</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Roleta</td>
+                        <td>Uniforme</td>
+                        <td>Uniforme</td>
+                        <td>Melhor Pai</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">4</th>
+                        <td>Roleta</td>
+                        <td>Uniforme</td>
+                        <td>Limite</td>
+                        <td>Melhor Pai</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">5</th>
+                        <td>Torneio</td>
+                        <td>Um Ponto</td>
+                        <td>Uniforme</td>
+                        <td>Melhor Pai</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">6</th>
+                        <td>Torneio</td>
+                        <td>Um Ponto</td>
+                        <td>Limite</td>
+                        <td>Melhor Pai</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">7</th>
+                        <td>Torneio</td>
+                        <td>Uniforme</td>
+                        <td>Uniforme</td>
+                        <td>Melhor Pai</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">8</th>
+                        <td>Torneio</td>
+                        <td>Uniforme</td>
+                        <td>Limite</td>
+                        <td>Melhor Pai</td>
+                      </tr>
+
+                      
+                    </tbody>
+                  </table>
+                   
+            </div>
+
+        </div>
+       
+        
+        <div class = "container">
+
+            <div class = "row">
+                <!-- <div class = "col-md-2"> -->
+
+                    
+                    <a class="btn btn-secondary" href="Experimentos.html" role="button">Experimentos</a>
+
+                <!-- </div> -->
+
+
+            </div>
+
+
+        </div>
+
+        <br><br>
+
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
